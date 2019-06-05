@@ -11,7 +11,51 @@
     <title>Budget Tracker</title>
   </head>
   <body>
-    <h1>Welcome, To Budget Tracker!</h1>
+    <h1 class="Welcome">Welcome to Budget Tracker, the App that makes saving money easy!</h1>
+    <div class="row">
+      <div class="row">
+        <h2 class="Buildit">First, we need to know you're income: </h2>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+          <h2 class="Buildit">Please Enter Your Hourly Pay: </h2>
+            <input type="text" id="hourly">
+        </div>
+        <div class="col-5">
+          <h2 class="Buildit">Please Enter The State You Live In:</h2>
+            <input type="text" id="State">
+            <button class="calculate" id="calculate">Calculate Monthly Income</button>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>We will now get your monthly expenses, so we can see how much you're spending and saving!</h2>
+      </div>
+    </div>
+    <div class="row" id="monthlyExpenses">
+      <input type="text" id="rent" placeholder="Rent or Mortgage Payment">
+      <input type="text" id="utilities" placeholder="Monthly Utilities">
+      <input type="text" id="carNote" placeholder="Car Payment">
+    </div>
+    <div class="row" id="monthlySubs">
+      <input type="text" id="insurance" placeholder="Health, Car, etc Insurance">
+      <input type="text" id="subscriptions" placeholder="Netflix, Amazon, etc Subscriptions">
+      <input type="text" id="funStuff" placeholder="Eating out, movies, etc">
+    </div>
+    <div class="row" id="monthlySavings">
+      <input type="text" id="emergency" placeholder="Emergency Fund">
+      <input type="text" id="savings" placeholder="Savings Each Month">
+      <input type="text" id="other" placeholder="Other">
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 pieChart">
+        <div class="Piechart" id="PieChart"></div>
+      </div>
+      <div class="col-2"></div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
