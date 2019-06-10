@@ -10,8 +10,11 @@ const OTHER = document.getElementById('other');
 const MONTHLY_INCOME = document.getElementById('monthly');
 const STATE_OF_RES = document.getElementById('State');
 
+// Income and State for tax api
 let incomeInput;
-let stateResidence;
+let stateResidence = '';
+
+// Monthly Bills //
 let monthlyRent;
 let monthlyUtilities;
 let monthlyCarNote;
@@ -34,8 +37,9 @@ EMERGENCY.addEventListener('change', (e) => emergencyFund = e.target.value, fals
 SAVINGS.addEventListener('change', (e) => monthlySavings = e.target.value, false)
 OTHER.addEventListener('change', (e) => monthlyOther = e.target.value, false)
 
-let arrOfCosts = []
+let totalMonthCosts;
 
 function displayCosts(){
-    
+    totalMonthCosts = monthlyRent + monthlyUtilities + monthlyCarNote + monthlySubs + monthlyIns + funStuff + emergencyFund + monthlySavings + monthlyOther;
+    document.getElementById("monthlyBills").innerHTML = totalMonthCosts;
 }
