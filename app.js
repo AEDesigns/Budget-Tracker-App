@@ -9,6 +9,12 @@ const SAVINGS = document.getElementById('savings');
 const OTHER = document.getElementById('other');
 const MONTHLY_INCOME = document.getElementById('monthly');
 const STATE_OF_RES = document.getElementById('State');
+const form = document.getElementById('form');
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    displayCosts();
+}, false);
 
 // Income and State for tax api
 let incomeInput = 0;
@@ -42,5 +48,5 @@ let totalMonthCosts = 0;
 function displayCosts(){
     totalMonthCosts = monthlyRent + monthlyUtilities + monthlyCarNote + monthlySubs + monthlyIns + funStuff + emergencyFund + monthlySavings + monthlyOther;
     document.getElementById("monthlyBills").innerHTML = totalMonthCosts;
-    console.log(parseInt(totalMonthCosts));
+    return parseInt(totalMonthCosts);
 }
