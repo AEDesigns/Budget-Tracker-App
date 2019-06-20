@@ -19,6 +19,7 @@ form.addEventListener('submit', function(e){
 // Income and State for tax api
 let incomeInput = 0;
 let stateResidence = '';
+let filingStatus = '';
 
 // Monthly Bills //
 let monthlyRent = 0;
@@ -50,3 +51,15 @@ function displayCosts(){
     document.getElementById("monthlyBills").innerHTML = totalMonthCosts;
     return parseInt(totalMonthCosts);
 }
+
+let taxeeObj = {
+    pay_rate: incomeInput,
+    filing_status: filingStatus,
+    state: stateResidence
+}
+
+const TAXEE_API = "https://taxee.io/api/v2/calculate/2019";
+const TAXEE_API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUElfS0VZX01BTkFHRVIiLCJodHRwOi8vdGF4ZWUuaW8vdXNlcl9pZCI6IjVjZjgzMjJlODM2OGI5MWExNTE2ZDRjOSIsImh0dHA6Ly90YXhlZS5pby9zY29wZXMiOlsiYXBpIl0sImlhdCI6MTU1OTc2OTY0Nn0.OtLpR4UWL9aWNgr8Yus9sm2GsSNTPSdbq1atLqATFBI';
+
+
+
